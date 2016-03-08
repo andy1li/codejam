@@ -14,6 +14,6 @@ Archive of my progressive attempts at previous codejam problems
 - - - -
 
 #### [Qualification Round - C. T9 Spelling](http://code.google.com/codejam/contest/351101/dashboard#s=p2)
->`【Easy】`
+>`【Easy】Build a map from letters to digits, and use it`
 
 - - - -

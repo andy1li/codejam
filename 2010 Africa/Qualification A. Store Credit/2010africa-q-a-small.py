@@ -1,3 +1,6 @@
+# Qualification Round - A. Store Credit
+# http://code.google.com/codejam/contest/351101/dashboard#s=p0
+
 def solve(credit, items):
     # Brute force whether "a + b == credit" for a, b in list of items
     for i_a, a in enumerate(items, start=1):

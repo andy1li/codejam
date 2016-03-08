@@ -1,3 +1,6 @@
+# Qualification Round - B. Reverse Words
+# http://code.google.com/codejam/contest/351101/dashboard#s=p1
+
 def solve(words):
     # Simply reverse the list of words
     words.reverse()
