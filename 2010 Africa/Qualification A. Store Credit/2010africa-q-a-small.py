@@ -1,4 +1,4 @@
-# Qualification Round - A. Store Credit
+# 2010 Africa Qualification Round - A. Store Credit
 # http://code.google.com/codejam/contest/351101/dashboard#s=p0
 
 def solve(credit, items):

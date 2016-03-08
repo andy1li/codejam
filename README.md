@@ -17,3 +17,9 @@ Archive of my progressive attempts at previous codejam problems
 >`【Easy】Build a map from letters to digits, and use it`
 
 - - - -
+
+## 2014
+#### [Qualification Round - D. Deceitful War](https://code.google.com/codejam/contest/dashboard?c=2974486#s=p3)
+>`【Medium】Find out first Ken's optimal strategy and then Naomi's optimal deceptive strategy`
+
+- - - -

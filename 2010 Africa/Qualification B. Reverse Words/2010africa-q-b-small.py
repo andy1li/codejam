@@ -1,4 +1,4 @@
-# Qualification Round - B. Reverse Words
+# 2010 Africa Qualification Round - B. Reverse Words
 # http://code.google.com/codejam/contest/351101/dashboard#s=p1
 
 def solve(words):

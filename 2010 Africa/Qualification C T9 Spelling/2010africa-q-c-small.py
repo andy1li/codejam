@@ -1,4 +1,4 @@
-# Qualification Round - C. T9 Spelling
+# 2010 Africa Qualification Round - C. T9 Spelling
 # http://code.google.com/codejam/contest/351101/dashboard#s=p2
 
 import string
