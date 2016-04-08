@@ -36,12 +36,9 @@ def solve(letters, map):
     previous = '-'
     result = ''
     for letter in letters:
-        # if (((map[previous] in map[letter]) != (map[previous] == map[letter])) or
-        #    ((map[letter] in map[previous]) != (map[previous] == map[letter]))):
-        #     print letters, previous, letter
-        #     print (map[previous] in map[letter]), (map[letter] in map[previous]), map[previous] == map[letter]
-        if ((map[previous] in map[letter]) or
-            (map[letter] in map[previous])):
+        # if (map[previous] in map[letter]) or
+        #    (map[letter] in map[previous]):
+        if map[previous][0] is map[letter][0]:
             result += ' ' + map[letter]
         else:
             result += map[letter]
