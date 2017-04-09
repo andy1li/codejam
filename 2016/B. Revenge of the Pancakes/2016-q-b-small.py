@@ -1,4 +1,4 @@
-# 2016 Africa Qualification Round - B. Revenge of the Pancakes
+# 2016 Qualification Round - B. Revenge of the Pancakes
 # https://code.google.com/codejam/contest/6254486/dashboard#s=p1
 
 def solve_plus(s):

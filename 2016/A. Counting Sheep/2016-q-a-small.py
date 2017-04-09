@@ -1,4 +1,4 @@
-# 2016 Africa Qualification Round - A. Counting Sheep
+# 2016 Qualification Round - A. Counting Sheep
 # https://code.google.com/codejam/contest/6254486/dashboard#s=p0
 
 def solve(n):
