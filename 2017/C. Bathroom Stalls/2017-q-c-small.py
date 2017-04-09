@@ -9,7 +9,6 @@ def get_max_min(n):
     else     : return n // 2, n // 2 - 1
 
 def solve(n, k):
-    if k > n / 2: return 0, 0
     if k == 1: return get_max_min(n)
 
     depth = 1
