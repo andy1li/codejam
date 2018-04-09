@@ -6,27 +6,34 @@ def get_max_min(n):
     else     : return       n // 2,       n // 2 - 1
 
 def solve(n, k):
+    ''' Imagine a binary tree for k, and adjust for separators and free spots '''
     n_log_two = n.bit_length() - 1
     k_depth   = k.bit_length() - 1
 
-    level_base = 2 ** (n_log_two - k_depth)
+    # base group size for every node in curr level
+    base_size = 2**(n_log_two - k_depth) 
 
-    offset_depth   = 2 ** k_depth - 1 # node count in previous levels
-    offset_log     = (n - 2 ** n_log_two) // (2 ** k_depth) # average log diff in curr level  
-    offset_log_rmd = (n - 2 ** n_log_two) %  (2 ** k_depth) # remainder
-    level_leftover = 2 ** (k_depth + 1) - 1 - k
+    # average "n" free spots for every node in curr level 
+    # = (n - full tree) / num of nodes in curr level
+    offset_n = (n - 2**n_log_two) // (2**k_depth) 
+
+    # seprators > offset_extra + final_slack ?
+    num_sep = 2**k_depth - 1 # number of separators = number of nodes in previous levels  
+    offset_rmd = (n - 2**n_log_two) %  (2**k_depth) # remainder of "n" free spots
+    final_slack = 2**(k_depth+1) - 1 - k # k + slack = full tree
 
     print('n, k:', n, k)
-    print('n_log_two, k_depth:', n_log_two, k_depth)
-    print('level_base, offset_log:', level_base, offset_log)
-    print('offset_depth, offset_log_rmd:', offset_depth, offset_log_rmd)
-    print('level_leftover:', level_leftover)
+    # print('n_log_two, k_depth:', n_log_two, k_depth)
+    print('base_size + offset_n:', base_size, '+', offset_n)
+    print('num_sep:', num_sep)
+    print('offset_rmd + final_slack:', offset_rmd, '+', final_slack)
+    
 
-    offset_leftover = [0, -1][offset_depth - offset_log_rmd > level_leftover]
+    offset_sep = [0, -1][num_sep > offset_rmd + final_slack]
 
-    last = level_base + offset_log + offset_leftover
-    print('last:', last)
-    return get_max_min(last)
+    adjusted_size = base_size + offset_n + offset_sep
+    print('adjusted_size:', adjusted_size)
+    return get_max_min(adjusted_size)
 
 #input, solve and output:
 file = 'foobar'
