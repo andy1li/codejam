@@ -36,7 +36,7 @@ assert solve(6, 'SCCSSC') == 2
 assert solve(2, 'CC') == 0
 assert solve(3, 'CSCSS') == 5 
 
-file  = open('sample.in',  'r')
+file  = open('sample.in')
 input = file.readline
 
 num_cases = int(input())

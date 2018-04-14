@@ -25,7 +25,7 @@ def solve(n, vals) -> Union[int, str]:
 assert solve(5, [5, 6, 8, 4, 3]) == 'OK'
 assert solve(3, [8, 9, 7]) == 1
 
-file  = open('sample.in',  'r')
+file  = open('sample.in')
 input = file.readline
 
 num_cases = int(input())

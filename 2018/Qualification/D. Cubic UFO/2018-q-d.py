@@ -153,7 +153,7 @@ assert all(a == b for a, b in zip(
     solve(1.0), [Vector(x=0.5), Vector(y=0.5), Vector(z=0.5)])
 )
 
-file  = open('sample.in',  'r')
+file  = open('sample.in')
 input = file.readline
 
 num_cases = int(input())

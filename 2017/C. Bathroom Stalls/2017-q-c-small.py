@@ -6,32 +6,30 @@ def get_max_min(n):
     else     : return       n // 2,       n // 2 - 1
 
 def solve(n, k):
-    ''' Imagine a binary tree for k, and adjust for separators and free spots '''
+    ''' Imagine a binary tree for k, then adjust for extra spots and separators'''
     n_log_two = n.bit_length() - 1
     k_depth   = k.bit_length() - 1
 
-    # base group size for every node in curr level
+    # base group size for every leaf node 
     base_size = 2**(n_log_two - k_depth) 
 
-    # average "n" free spots for every node in curr level 
-    # = (n - full tree) / num of nodes in curr level
-    offset_n = (n - 2**n_log_two) // (2**k_depth) 
+    # average "n - full tree" extra spots for every leaf node 
+    offset_extra = (n - 2**n_log_two) // (2**k_depth) 
 
-    # seprators > offset_extra + final_slack ?
+    # seprators > offset_rmd + final_slack ?
     num_sep = 2**k_depth - 1 # number of separators = number of nodes in previous levels  
-    offset_rmd = (n - 2**n_log_two) %  (2**k_depth) # remainder of "n" free spots
-    final_slack = 2**(k_depth+1) - 1 - k # k + slack = full tree
+    offset_rmd = (n - 2**n_log_two) %  (2**k_depth) # remainder of "n - full tree" extra spots
+    slack_size = 2**(k_depth+1) - 1 - k # k + slack = full tree
 
     print('n, k:', n, k)
     # print('n_log_two, k_depth:', n_log_two, k_depth)
-    print('base_size + offset_n:', base_size, '+', offset_n)
+    print('base_size + offset_extra:', base_size, '+', offset_extra)
     print('num_sep:', num_sep)
-    print('offset_rmd + final_slack:', offset_rmd, '+', final_slack)
+    print('offset_rmd + slack_size:', offset_rmd, '+', slack_size)
     
+    offset_sep = [0, -1][num_sep > offset_rmd + slack_size]
 
-    offset_sep = [0, -1][num_sep > offset_rmd + final_slack]
-
-    adjusted_size = base_size + offset_n + offset_sep
+    adjusted_size = base_size + offset_extra + offset_sep
     print('adjusted_size:', adjusted_size)
     return get_max_min(adjusted_size)
 
