@@ -80,7 +80,7 @@ answers = [
     'Case #6: IMPOSSIBLE'
 ]
 
-file  = open('sample.in')
+file = open('sample.in')
 input = file.readline
 
 num_cases = int(input())
