@@ -1,17 +1,20 @@
 # Round 1A 2018 - Bit Party
 # https://codejam.withgoogle.com/2018/challenges/0000000000007883/dashboard/000000000002fff6
 
-from pprint import pprint
-from typing import NamedTuple
+# from typing import NamedTuple
+# class Cashier(NamedTuple):
+#     max_bits : int
+#     per_bit : int
+#     overhead: int
 
-class Cashier(NamedTuple):
-    maximum : int
-    per_bit : int
-    overhead: int
+from collections import namedtuple
+Cashier = namedtuple(
+    'Cashier', ['max_bits', 'per_bit', 'overhead']
+)
 
 def capacity(cashier, time) -> int:
     capacity = min(
-        cashier.maximum,
+        cashier.max_bits,
         (time-cashier.overhead) // cashier.per_bit,
     )
     return max(0, capacity) 
