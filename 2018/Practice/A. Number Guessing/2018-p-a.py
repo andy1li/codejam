@@ -4,19 +4,16 @@
 import sys
 
 def run(n, a, b) -> None:    
-    sys.stderr.write(f'{n}, {a}, {b}\n')
+    # print(f'{n}, {a}, {b}', file=sys.stderr)
     for _ in range(n):
         guess = (a+b) // 2
         print(guess, flush=True)
         res = input()
-        sys.stderr.write(f'{guess} {res}\n')
+        # print(f'{guess} {res}', file=sys.stderr)
 
-        if res == 'TOO_SMALL':
-            a = guess + 1
-        elif res == 'TOO_BIG':
-            b = guess - 1
-        elif res == 'CORRECT':
-            return
+        if   res == 'TOO_SMALL': a = guess + 1
+        elif res == 'TOO_BIG'  : b = guess - 1
+        elif res == 'CORRECT'  : return
 
     sys.exit(-1)
     
