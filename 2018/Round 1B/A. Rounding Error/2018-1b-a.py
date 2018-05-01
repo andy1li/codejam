@@ -6,11 +6,8 @@ from math import ceil
 class Count:
     def __init__(self, n, c):
         self.n = n
-        self.c = int(c)
-
-    @property
-    def fraction(self):
-        return self.c/self.n * 100
+        self.c = c
+        self.fraction = c/n * 100
 
     @property
     def residual(self):
@@ -75,7 +72,7 @@ input = file.readline
 num_cases = int(input())
 for case in range(1, num_cases+1):
     n, l = map(int, input().split())
-    counts = [Count(n, c) for c in input().split()]
+    counts = [Count(n, int(c)) for c in input().split()]
     result = solve(n, counts)
 
     output = 'Case #%s: %s' %(case, result)

@@ -6,7 +6,7 @@ from typing import Tuple
 
 Sign = namedtuple('Sign', ['n', 'm'])
 
-Candidate = namedtuple('Candidate', ['n', 'm', 'switch', 'start'])
+Candidate = namedtuple('Candidate', ['candidate', 'n', 'm', 'start', 'switch'])
 
 def parse_sign(line) -> Sign:
     d, a, b = map(int, line.split())
@@ -15,34 +15,28 @@ def parse_sign(line) -> Sign:
 def get_length(idx, n_can, m_can):
     return idx+1 - min(n_can.start, m_can.start)
 
-def step(idx, sign_prev, sign_curr, n_prev, m_prev) -> Tuple[Candidate, Candidate]:
-    if sign_curr.m == sign_prev.m:
-        m_curr = m_prev
-    elif sign_curr.m == n_prev.m:
-        # keep n, m, start from the other candidate
-        # switch = idx
-        m_curr = n_prev._replace(switch=idx)
-    else:
-        # keep n from the other candidate
-        # switch = idx   
-        # set new m
-        # start = other.switch // start as left as possible
-        m_curr = n_prev._replace(switch=idx, m=sign_curr.m, start=n_prev.switch)
+def step(idx, sign_prev, sign_curr, this, other) -> Candidate:
+    m_or_n = this.candidate
 
-    if sign_curr.n == sign_prev.n:
-        n_curr = n_prev
-    elif sign_curr.n == m_prev.n:
-        # keep n, m, start from the other candidate
-        # switch = idx
-        n_curr = m_prev._replace(switch=idx)
+    if getattr(sign_curr, m_or_n) == getattr(sign_prev, m_or_n):
+        return this
+    elif getattr(sign_curr, m_or_n) == getattr(other, m_or_n):
+        # if same m/n as the other side's m/n
+        # keep (n/m, start) from the other side
+        # mark the new switch point
+        return other._replace(candidate=m_or_n, switch=idx)
     else:
-        # keep m from the other candidate
-        # xstart = idx
-        # set new n
+        # new m/n candidate (sign_curr.m/n)
+        # keep n/m from the other side
         # start = other.switch // start as left as possible
-        n_curr = m_prev._replace(switch=idx, n=sign_curr.n ,start=m_prev.switch)
-
-    return n_curr, m_curr
+        # mark the new switch point
+        return Candidate(
+            m_or_n,
+            m = sign_curr.m if m_or_n == 'm' else other.m,
+            n = sign_curr.n if m_or_n == 'n' else other.n,
+            start = other.switch,
+            switch = idx
+        )
 
 def solve(s, signs): 
     # print(signs)
@@ -54,11 +48,14 @@ def solve(s, signs):
     for idx, (prev, curr) in enumerate(zip(signs, signs[1:]), start=1):
         # print(idx, prev, curr)
         if idx == 1:
-            n_can = m_can = Candidate(*prev, 0, 0)
+            n_can = Candidate('n', *prev, 0, 0)
+            m_can = Candidate('m', *prev, 0, 0)
 
-        n_can, m_can = step(idx, prev, curr, n_can, m_can)
-        # print('n_can', n_can)
-        # print('m_can', m_can, '\n')
+        n_can, m_can = (
+            step(idx, prev, curr, this=n_can, other=m_can),
+            step(idx, prev, curr, this=m_can, other=n_can)
+        )
+        # print(n_can, '\n', m_can, '\n')
 
         length = get_length(idx, n_can, m_can)
         if length > max_len:
