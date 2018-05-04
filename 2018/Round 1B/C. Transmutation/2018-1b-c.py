@@ -17,7 +17,7 @@ def check(m, recipes, have, sum_have, target):
     have = deepcopy(have)
     need = [target] + [0] * (m-1)
 
-    prev_sum = stop_count = 0
+    prev_sum = stall_count = 0
     while True:
         next_need = [0] * m
         
@@ -49,9 +49,9 @@ def check(m, recipes, have, sum_have, target):
         
         # have is unchanging == need is not diminishing
         # for a full cycle == it will not diminish ever
-        stop_count += (prev_sum == sum_have)
+        stall_count += (prev_sum == sum_have)
         prev_sum = sum_have
-        if stop_count > m: return False
+        if stall_count > m: return False
 
         need = next_need
 

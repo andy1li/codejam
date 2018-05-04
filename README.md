@@ -1,45 +1,56 @@
-# Gists of Google Codejam problems
+# Google Code Jam 
 
-Archive of my progressive attempts at previous codejam problems
+Archive of my attempts at previous codejam problems
 
-## 2010 Africa
-#### [Qualification Round - A. Store Credit](http://code.google.com/codejam/contest/351101/dashboard#s=p0)
->`【Trivial】Brute force whether "a + b == credit" for a, b in list of items`
+# 2018
 
-- - - -
+## [Practice Round](https://codejam.withgoogle.com/2018/challenges/0000000000000130/analysis)
 
-#### [Qualification Round - B. Reverse Words](http://code.google.com/codejam/contest/351101/dashboard#s=p1)
->`【Trivial】Simply reverse the list of words`
+- [x]  Number Guessing Senate
+- [x]  Evacuation
+- [x]  Steed 2: Cruise Control
+- [x]  Bathroom Stalls
 
-- - - -
+## [Qualification Round](https://codejam.withgoogle.com/2018/challenges/00000000000000cb/analysis)
 
-#### [Qualification Round - C. T9 Spelling](http://code.google.com/codejam/contest/351101/dashboard#s=p2)
->`【Easy】Build a map from letters to digits, and use it`
+- [x]  A. Saving The Universe Again
+- [x]  B. Trouble Sort
+- [x]  C. Go, Gopher!
+- [x]  D. Cubic UFO Overview
 
-- - - -
+## [Round 1A](https://codejam.withgoogle.com/2018/challenges/0000000000007883/analysis)
 
-## 2014
-#### [Qualification Round - D. Deceitful War](https://code.google.com/codejam/contest/dashboard?c=2974486#s=p3)
->`【Medium】Find out first Ken's optimal strategy and then Naomi's optimal deceptive strategy`
+- [x]  A. Waffle Choppers
+- [x]  B. Bit Party Edgy
+- [x]  C. Baking
 
-- - - -
+## [Round 1B](https://codejam.withgoogle.com/2018/challenges/0000000000007764/analysis)
 
-## 2016
-#### [Qualification Round - A. Counting Sheep](https://code.google.com/codejam/contest/6254486/dashboard#s=p0)
->`【Trivial】Mark all the occurred digits`
+- [x]  A. Rounding Error
+- [x]  B. Mysterious Road Signs
+- [x]  C. Transmutation
 
-- - - -
+## Round 1C
 
-#### [Qualification Round - B. Revenge of the Pancakes](https://code.google.com/codejam/contest/6254486/dashboard#s=p1)
->`【Easy】Recursively flip the pancakes`
+- [ ]  A.
+- [ ]  B.
+- [ ]  C.
 
-- - - -
+---
 
-#### [Qualification Round - C. Coin Jam](https://code.google.com/codejam/contest/6254486/dashboard#s=p2)
->`【Easy】After failures at an is_prime() function, observe the solution pattern and use a magic number as the stop figure. `
+# [Past contests](https://code.google.com/codejam/past-contests):
 
-- - - -
+# 2017
 
+## [Qualification Round](https://code.google.com/codejam/contest/3264486/dashboard#s=a&a=4)
 
+- [x]  A. Oversized Pancake Flipper
+- [x]  B. Tidy Numbers
+- [x]  C. Bathroom Stalls
+- [ ]  D. Fashion Show
 
+## Round 1A
 
+## Round 1B
+
+## Round 1C
