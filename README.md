@@ -1,12 +1,12 @@
 # Google Code Jam 
 
-Archive of my attempts at previous codejam problems
+My progress of attempting previous code jam problems
 
 ## 2018 Round 1C
 
-- [ ]  A.
-- [ ]  B.
-- [ ]  C.
+- [x]  A. A Whole New Word
+- [x]  B. Lollipop Shop
+- [ ]  C. Ant Stack
 
 ## [2018 R]()[ound 1B](https://codejam.withgoogle.com/2018/challenges/0000000000007764/analysis)
 
