@@ -2,55 +2,51 @@
 
 Archive of my attempts at previous codejam problems
 
-# 2018
+## 2018 Round 1C
 
-## [Practice Round](https://codejam.withgoogle.com/2018/challenges/0000000000000130/analysis)
+- [ ]  A.
+- [ ]  B.
+- [ ]  C.
 
-- [x]  Number Guessing Senate
-- [x]  Evacuation
-- [x]  Steed 2: Cruise Control
-- [x]  Bathroom Stalls
+## [2018 R]()[ound 1B](https://codejam.withgoogle.com/2018/challenges/0000000000007764/analysis)
 
-## [Qualification Round](https://codejam.withgoogle.com/2018/challenges/00000000000000cb/analysis)
+- [x]  A. Rounding Error
+- [x]  B. Mysterious Road Signs
+- [x]  C. Transmutation
+
+## [2018 R]()[ound 1A](https://codejam.withgoogle.com/2018/challenges/0000000000007883/analysis)
+
+- [x]  A. Waffle Choppers
+- [x]  B. Bit Party
+- [x]  C. Edgy Baking
+
+## [2018 Q]()[ualification Round](https://codejam.withgoogle.com/2018/challenges/00000000000000cb/analysis)
 
 - [x]  A. Saving The Universe Again
 - [x]  B. Trouble Sort
 - [x]  C. Go, Gopher!
 - [x]  D. Cubic UFO Overview
 
-## [Round 1A](https://codejam.withgoogle.com/2018/challenges/0000000000007883/analysis)
+## [2018 P]()[ractice Round](https://codejam.withgoogle.com/2018/challenges/0000000000000130/analysis)
 
-- [x]  A. Waffle Choppers
-- [x]  B. Bit Party Edgy
-- [x]  C. Baking
-
-## [Round 1B](https://codejam.withgoogle.com/2018/challenges/0000000000007764/analysis)
-
-- [x]  A. Rounding Error
-- [x]  B. Mysterious Road Signs
-- [x]  C. Transmutation
-
-## Round 1C
-
-- [ ]  A.
-- [ ]  B.
-- [ ]  C.
+- [x]  A. Number Guessing Senate
+- [x]  B. Evacuation
+- [x]  C. Steed 2: Cruise Control
+- [x]  D. Bathroom Stalls
 
 ---
 
-# [Past contests](https://code.google.com/codejam/past-contests):
+# [Old Platform](https://code.google.com/codejam/past-contests)
 
-# 2017
+## 2017 Round 1C
 
-## [Qualification Round](https://code.google.com/codejam/contest/3264486/dashboard#s=a&a=4)
+## 2017 Round 1B
+
+## 2017 Round 1A
+
+## [2017 Q]()[ualification Round](https://code.google.com/codejam/contest/3264486/dashboard#s=a&a=4)
 
 - [x]  A. Oversized Pancake Flipper
 - [x]  B. Tidy Numbers
 - [x]  C. Bathroom Stalls
 - [ ]  D. Fashion Show
-
-## Round 1A
-
-## Round 1B
-
-## Round 1C

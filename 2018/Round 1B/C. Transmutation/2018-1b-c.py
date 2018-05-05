@@ -47,8 +47,8 @@ def check(m, recipes, have, sum_have, target):
         # need is satisfied
         if not sum(need): return True
         
-        # have is unchanging == need is not diminishing
-        # for a full cycle == it will not diminish ever
+        # have is stalling => need is not diminishing
+        # for a full cycle => it won't diminish ever
         stall_count += (prev_sum == sum_have)
         prev_sum = sum_have
         if stall_count > m: return False
