@@ -38,7 +38,7 @@ def check(m, recipes, have, sum_have, target):
 
                 # keep transmuting need:
                 # if it's ok, it's ok
-                # or it will become impossible to satisfy
+                # otherwise it will become impossible to satisfy
                 # either way it will eventually end
                 n1, n2 = recipes[i]
                 next_need[n1] += need[i]

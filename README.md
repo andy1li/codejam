@@ -6,7 +6,7 @@ My progress of attempting previous code jam problems
 
 - [x]  A. A Whole New Word
 - [x]  B. Lollipop Shop
-- [ ]  C. Ant Stack
+- [x]  C. Ant Stack
 
 ## [2018 R]()[ound 1B](https://codejam.withgoogle.com/2018/challenges/0000000000007764/analysis)
 

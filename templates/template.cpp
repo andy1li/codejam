@@ -1,7 +1,5 @@
-// Round 1C 2018 - C. Ant Stack 
-// https://codejam.withgoogle.com/2018/challenges/0000000000007765/dashboard/000000000003e0a8
-
-// Solution adpated from https://codejam.withgoogle.com/2018/challenges/0000000000007765/attempts/for/SkyDec
+// Round X 201X - X. FOOBAR
+// https://
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +11,7 @@ using namespace std;
 #define per(i, j, k) for (int i=j; i>=k; i--)
 #define inf LLONG_MAX
 typedef long long LL;
-int num_cases, case_i = 1;
+int num_cases, case_i = 0;
 
 /* ########################################################################## */
 
