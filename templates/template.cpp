@@ -1,4 +1,4 @@
-// Round X 201X - X. FOOBAR
+// 201X Round X - X. FOOBAR
 // https://
 
 #include <stdio.h>
@@ -17,7 +17,7 @@ int num_cases, case_i = 0;
 
 const int magic = 139;
 int n, weight;
-LL dp[139+1];
+LL dp[magic+1];
 
 void solve() {
     dp[0] = 0; rep(i, 1, magic) dp[i] = inf;
@@ -32,15 +32,16 @@ void solve() {
     }
 
     int res = 0;
-    rep(i, 1, magic)
+    rep(i, 1, magic) {
         if (dp[i] < inf) res = i;
+    }
     printf("Case #%d: %d\n", ++case_i, res);
 }
 
 /* ########################################################################## */
 
 int main() {
-    if (getenv("__LOCAL__") != NULL) freopen("sample.in", "r", stdin);
+    if (getenv("__LOCAL__")) freopen("sample.in", "r", stdin);
     cin >> num_cases;
     while (num_cases--) solve();
     return 0;

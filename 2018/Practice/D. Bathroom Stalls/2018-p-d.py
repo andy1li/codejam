@@ -1,5 +1,5 @@
-# 2017 Qualification Round - C. Bathroom Stalls
-# https://code.google.com/codejam/contest/3264486/dashboard#s=p2
+# 2018 Practice Session - D. Bathroom Stalls
+# https://codejam.withgoogle.com/2018/challenges/0000000000000130/dashboard/0000000000000652
 
 def get_max_min(n):
     if n & 1 : return (n - 1) // 2, (n - 1) // 2
