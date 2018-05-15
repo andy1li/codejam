@@ -15,26 +15,26 @@ def get_input():
     else:
         yield input
 
-################################################################################
+#------------------------------------------------------------------------------#
 
 magic = 139
 
 def solve(n, weights) -> int:
     # print(n, weights)
-    dp = [0.] + [float('inf')] * (magic)
+    dp = [float('inf')] * (magic+1); dp[0] = 0
 
     for w in weights:
         for i in reversed(range(1, magic+1)):
             if dp[i-1] <= 6 * w:
                 dp[i] = min(dp[i], dp[i-1]+w)
 
-    print(dp, file=sys.stderr)
+    # print(dp, file=sys.stderr)
     for i in range(1, magic+1):
         if dp[i] < float('inf'):
             res = i
     return res
 
-################################################################################
+#------------------------------------------------------------------------------#
 
 with get_input() as input:
     num_cases = int(input())
