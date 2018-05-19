@@ -128,21 +128,18 @@ def solve(n, points) -> str:
 
 #------------------------------------------------------------------------------#
 
-file  = 'sample'
-f_in  = open(file+'.in'); input = f_in.readline
-f_out = open(file+'.out', 'w')
+file = 'sample'
+with open(file+'.in') as f_in, open(file+'.out', 'w') as f_out:
+    input = f_in.readline
  
-for case in range(1, int(input())+1):
-    n, m = map(int, input().split())
-    points = set(
-        parse_point()
-        for _ in range(m)
-    )
-    result = solve(n, points)
+    for case in range(1, int(input())+1):
+        n, m = map(int, input().split())
+        points = set(
+            parse_point()
+            for _ in range(m)
+        )
+        result = solve(n, points)
 
-    result_output = 'Case #%d: %s\n' % (case, result)
-    print(result_output)
-    f_out.write(result_output)
-
-f_in.close()
-f_out.close()
+        result_output = 'Case #%d: %s\n' % (case, result)
+        print(result_output)
+        f_out.write(result_output)

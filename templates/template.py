@@ -3,7 +3,6 @@
 
 from contextlib import contextmanager
 import os
-import sys
 
 @contextmanager
 def get_input():

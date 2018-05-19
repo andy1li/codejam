@@ -21,31 +21,30 @@ def solve(n, k):
     offset_rmd = (n - 2**n_log_two) %  (2**k_depth) # remainder of "n - full tree" extra spots
     slack_size = 2**(k_depth+1) - 1 - k # k + slack = full tree
 
-    print('n, k:', n, k)
+    # print('n, k:', n, k)
     # print('n_log_two, k_depth:', n_log_two, k_depth)
-    print('base_size + offset_extra:', base_size, '+', offset_extra)
-    print('num_sep:', num_sep)
-    print('offset_rmd + slack_size:', offset_rmd, '+', slack_size)
+    # print('base_size + offset_extra:', base_size, '+', offset_extra)
+    # print('num_sep:', num_sep)
+    # print('offset_rmd + slack_size:', offset_rmd, '+', slack_size)
     
     offset_sep = [0, -1][num_sep > offset_rmd + slack_size]
 
     adjusted_size = base_size + offset_extra + offset_sep
-    print('adjusted_size:', adjusted_size)
+    # print('adjusted_size:', adjusted_size)
     return get_max_min(adjusted_size)
 
 #input, solve and output:
-file = 'foobar'
-input = open(file+'.in', 'r')
-output = open(file+'.out', 'w')
+file = 'sample'
+with open(file+'.in') as f_in, open(file+'.out', 'w') as f_out:
+    input = f_in.readline
 
-n_cases = int(input.readline())
-for case in range(1, n_cases+1):
-    n, k = map(int, input.readline().split())
-    max_val, min_val = solve(n, k)
+    n_cases = int(input())
+    for case in range(1, n_cases+1):
+        n, k = map(int, input().split())
+        max_val, min_val = solve(n, k)
 
-    result_output = 'Case #%s: %s %s\n' %(case, max_val, min_val)
-    print(result_output)
-    output.write(result_output)
+        result_output = 'Case #%s: %s %s\n' %(case, max_val, min_val)
+        print(result_output)
+        f_out.write(result_output)
 
-input.close()
-output.close()
+

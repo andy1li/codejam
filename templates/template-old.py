@@ -12,16 +12,13 @@ def solve(n) -> str:
 #------------------------------------------------------------------------------#
 
 file = 'sample'
-f_in = open(file+'.in'); input = f_in.readline
-f_out = open(file+'.out', 'w')
+with open(file+'.in') as f_in, open(file+'.out', 'w') as f_out:
+    input = f_in.readline
+    
+    for case in range(1, int(input())+1):
+        n = int(input())
+        result = solve(n)
 
-for case in range(1, int(input())+1):
-    n = int(input())
-    result = solve(n)
-
-    result_output = 'Case #%d: %s\n' % (case, result)
-    print(result_output)
-    f_out.write(result_output)
-
-f_in.close()
-f_out.close()
+        result_output = 'Case #%d: %s\n' % (case, result)
+        print(result_output)
+        f_out.write(result_output)

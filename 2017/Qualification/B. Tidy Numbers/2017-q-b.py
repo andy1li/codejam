@@ -19,20 +19,16 @@ def solve(n):
             else:
                 return '9' * (len(n) - 1)
         
+#------------------------------------------------------------------------------#
 
-#input, solve and output:
-file = 'B-large'
-input = open(file+'.in', 'r')
-output = open(file+'.out', 'w')
+file = 'sample'
+with open(file+'.in') as f_in, open(file+'.out', 'w') as f_out:
+    input = f_in.readline
+ 
+    for case in range(1, int(input())+1):
+        n = input().strip()
+        result = solve(n)
 
-n_cases = int(input.readline())
-for case in range(1, n_cases+1):
-    n = input.readline().strip()
-    result = solve(n)
-
-    result_output = 'Case #%s: %s\n' %(case, result)
-    # print(result_output)
-    output.write(result_output)
-
-input.close()
-output.close()
+        result_output = 'Case #%d: %s\n' % (case, result)
+        print(result_output)
+        f_out.write(result_output)

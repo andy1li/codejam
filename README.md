@@ -2,6 +2,12 @@
 
 My progress of attempting previous code jam problems
 
+## 2018 Round 2
+
+- [ ]  A.
+- [ ]  B.
+- [ ]  C.
+
 ## [2018 Round 1C](https://codejam.withgoogle.com/2018/challenges/0000000000007765/analysis)
 
 - [x]  A. A Whole New Word
@@ -27,7 +33,7 @@ My progress of attempting previous code jam problems
 - [x]  C. Go, Gopher!
 - [x]  D. Cubic UFO Overview
 
-## [2018 Practice Round](https://codejam.withgoogle.com/2018/challenges/0000000000000130/analysis)
+## [2018 Practice Session](https://codejam.withgoogle.com/2018/challenges/0000000000000130/analysis)
 
 - [x]  A. Number Guessing Senate
 - [x]  B. Evacuation
@@ -42,11 +48,15 @@ My progress of attempting previous code jam problems
 
 ## 2017 Round 1B
 
-## 2017 Round 1A
+## [2017 Round 1A](https://code.google.com/codejam/contest/5304486/dashboard#s=a)
+
+- [ ]  A. Alphabet Cake
+- [ ]  B. Ratatouille
+- [ ]  C. Play the Dragon
 
 ## [2017 Qualification Round](https://code.google.com/codejam/contest/3264486/dashboard#s=a)
 
 - [x]  A. Oversized Pancake Flipper
 - [x]  B. Tidy Numbers
 - [x]  C. Bathroom Stalls
-- [ ]  D. Fashion Show
+- [x]  D. Fashion Show
