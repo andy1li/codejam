@@ -5,7 +5,6 @@ system. The judging system behavior might be different.
 """
 
 from __future__ import print_function
-import random
 import subprocess
 import sys
 
@@ -36,13 +35,14 @@ Windows users:
   line below.
 """
 
-# Right now, there are 3 test cases with the minimum prepared area A in each
-# test case being 10. We encourage you to modify LIST_OF_A for more thorough
-# testing. Note that A[0] is the A given for the first test case, A[1] is for
-# the second test case, etc. In real judging, A is the same for all test cases
-# within the same test set.
-LIST_OF_A = [20, 200] * 50
-NUM_TEST_CASES = len(LIST_OF_A)
+# Hard-coded list for numbers to guess. We encourage you to modify this list,
+# as well as A, B, N below as you wish, for more thorough testing.
+CORRECT_GUESS_LIST = [3, 7, 8, 1, 5]
+A = 0
+B = 10
+N = 10
+assert (A < min(CORRECT_GUESS_LIST)) and (max(CORRECT_GUESS_LIST) <= B)
+NUM_TEST_CASES = len(CORRECT_GUESS_LIST)
 # You can set PRINT_INTERACTION_HISTORY to True to print out the interaction
 # history between your code and the judge.
 PRINT_INTERACTION_HISTORY = False
@@ -52,7 +52,6 @@ PRINT_INTERACTION_HISTORY = False
 def JudgePrint(p, s):
   # Print the judge output to your code's input stream. Log this interaction
   # to console (stdout) if PRINT_INTERACTION_HISTORY is True.
-  # print('JudgePrint:', s, '\n')
   print(s, file=p.stdin)
   p.stdin.flush()
   if PRINT_INTERACTION_HISTORY:
@@ -90,9 +89,9 @@ def CheckSubprocessExit(p, case_id):
 def WrongAnswerExit(p, case_id, error_msg):
   print("Case #{} failed: {}".format(case_id, error_msg))
   try:
-    JudgePrint(p, "-1 -1")
+    JudgePrint(p, "WRONG_ANSWER")
   except IOError:
-    print("Failed to print -1 -1 because your code finished already.")
+    print("Failed to print WRONG_ANSWER because your code finished already.")
   WaitForSubprocess(p)
   sys.exit(-1)
 
@@ -130,79 +129,56 @@ except Exception as e:
   sys.exit(-1)
 
 JudgePrint(p, NUM_TEST_CASES)
-for test_case_id in range(1, NUM_TEST_CASES + 1):
+for i in range(NUM_TEST_CASES):
   if PRINT_INTERACTION_HISTORY:
-      print("Test Case #{}:".format(test_case_id))
-  # Different test case has different seed.
-  random.seed(test_case_id)
-  A = LIST_OF_A[test_case_id - 1]
-  JudgePrint(p, A)
+    print("Test Case #{}:".format(i + 1))
+  JudgePrint(p, "{} {}".format(A, B))  # the range (A, B]
+  JudgePrint(p, N)  # number of tries, N
+  p.stdin.flush()
+  answer = CORRECT_GUESS_LIST[i]
   test_case_passed = False
-  random.seed(test_case_id)
-  field = set()
-  prepared_cells_count = 0
-  northmost = None
-  for i_judge in range(1000):
-    # Detect whether the subprocess has finished running.
-    CheckSubprocessExit(p, test_case_id)
+  for _ in range(N):
+    # Detect whether the your code has finished running.
+    CheckSubprocessExit(p, i + 1)
 
     user_input = None
     try:
       user_input = p.stdout.readline()
-      i, j = map(int, user_input.split())
-      # print('User Input:', i, j)
+      q = int(user_input)
     except:
       # Note that your code might finish after the first CheckSubprocessExit
       # check above but before the readline(), so we will need to again check
       # whether your code has finished.
-      CheckSubprocessExit(p, test_case_id)
+      CheckSubprocessExit(p, i + 1)
       exit_msg = ""
       if user_input == "":
-        exit_msg = (
-            "Read an empty string as opposed to 2 integers for cell location. "
-            "This might happen because your code exited early, or printed an "
-            "extra newline character.")
+        exit_msg = ("Read an empty string for the guess. This might happen "
+                    "because your code exited early, or printed an extra "
+                    "newline character.")
       elif user_input is None:
         exit_msg = (
-            "Unable to read the cell location. This might happen because your "
+            "Unable to read the guess. This might happen because your "
             "code exited early, printed an extra new line character, or did "
             "not print the output correctly.")
       else:
-        exit_msg = (
-            "Failed to read the cell location. Expected two integers ending "
-            "with one newline character. Read \"{}\" (quotes added to isolate "
-            "output of your program) instead.".format(user_input))
-      WrongAnswerExit(p, test_case_id, exit_msg)
+        exit_msg = ("Failed to read the guess. Expected an integer ending with "
+                    "one new line character. Read \"{}\" (quotes added to "
+                    "isolate your output) instead.").format(user_input)
+      WrongAnswerExit(p, i + 1, exit_msg)
     if PRINT_INTERACTION_HISTORY:
-      print("Judge reads:", user_input.rstrip())
-    if (i <= 1) or (i >= 1000) or (j <= 1) or (j >= 1000):
-      WrongAnswerExit(p, test_case_id, "Your input is out of range [2, 999].")
-    prepared_i = random.randint(i - 1, i + 1)
-    prepared_j = random.randint(j - 1, j + 1)
-    if not (prepared_i, prepared_j) in field:
-      if northmost is None:
-        northmost = prepared_i
-        southmost = prepared_i
-        westmost = prepared_j
-        eastmost = prepared_j
-      else:
-        northmost = min(prepared_i, northmost)
-        southmost = max(prepared_i, southmost)
-        westmost = min(prepared_j, westmost)
-        eastmost = max(prepared_j, eastmost)
-      field.add((prepared_i, prepared_j))
-      prepared_cells_count += 1
-      if (prepared_cells_count >=
-          A) and (prepared_cells_count == (southmost - northmost + 1) *
-                  (eastmost - westmost + 1)):
-        JudgePrint(p, "0 0")
-        print('Success! i:', i_judge)
-        test_case_passed = True
-        break
-    JudgePrint(p, "{} {}".format(prepared_i, prepared_j))
+      print("Judge reads:", q)
+    if (q <= A) or (q > B):
+      WrongAnswerExit(p, i + 1, "Your guess, {}, is out of range!".format(q))
+    if q == answer:
+      JudgePrint(p, "CORRECT")
+      test_case_passed = True
+      break
+    elif q < answer:
+      JudgePrint(p, "TOO_SMALL")
+    else:
+      JudgePrint(p, "TOO_BIG")
   if not test_case_passed:
-    WrongAnswerExit(p, test_case_id,
-                    "Failed to prepare the rectangle within 1000 tries.")
+    WrongAnswerExit(p, i + 1, "Too many queries.")
 
 extra_output = p.stdout.readline()
 WaitForSubprocess(p)

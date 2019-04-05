@@ -1,4 +1,4 @@
-# 201X Round X  - X. FOOBAR
+# 2019 Qualification Round - A. 
 # https://
 
 def solve(n) -> int:

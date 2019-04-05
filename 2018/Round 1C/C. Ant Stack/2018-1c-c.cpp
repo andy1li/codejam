@@ -9,8 +9,8 @@
 #include <iostream>
 using namespace std;
 
-#define rep(i, j, k) for (int i=j; i<=k; i++)
-#define per(i, j, k) for (int i=j; i>=k; i--)
+#define rep(i, j, k) for (int i=j; i<=k; ++i)
+#define per(i, j, k) for (int i=j; i>=k; --i)
 #define inf LLONG_MAX
 typedef long long LL;
 int num_cases, case_i = 1;
