@@ -1,28 +1,34 @@
 # 2019 Qualification Round - C. Cryptopangrams
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000051705/000000000008830b
 
+from collections import deque
 from math import gcd
 from string import ascii_uppercase
 
+def get_start(cipher):
+    return next((i, b)
+        for i, (a, b) in enumerate(zip(cipher, cipher[1:]))
+        if a != b
+    )
+    
 def solve(cipher):
-    seq = [ gcd(a, b)
-        for a, b in zip(cipher, cipher[1:])
-    ]
+    seq = deque()
+    i, start = get_start(cipher)
 
-    seq = [ cipher[0]//seq[0] ] + seq # head
-    seq.append( cipher[-1]//seq[-1] ) # last
+    fst, snd = cipher[i:i+2]
+    seq.append(fst//gcd(fst, snd))
+    for x in cipher[i:]: seq.append(x//seq[-1])
+    for x in reversed(cipher[:i]): seq.appendleft(x//seq[0])
+
     primes = set(seq)
-
     assert len(primes) == 26
     letter = dict(zip(sorted(primes), ascii_uppercase))
-
     return ''.join(map(letter.get, seq))
 
 #------------------------------------------------------------------------------#
 
 for case in range(1, int(input())+1):
-    _ = input()
-    cipher = [*map(int, input().split())]
+    input()
+    cipher = [int(x) for x in input().split()]
     result = solve(cipher)
-    output = 'Case #%d: %s' %(case, result)
-    print(output)
+    print('Case #{}:'.format(case), result)
