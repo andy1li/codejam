@@ -6,19 +6,18 @@ from math import gcd
 from string import ascii_uppercase
 
 def get_start(cipher):
-    return next((i, b)
+    return next( i
         for i, (a, b) in enumerate(zip(cipher, cipher[1:]))
         if a != b
     )
-    
-def solve(cipher):
-    seq = deque()
-    i, start = get_start(cipher)
 
+def solve(cipher):
+    i = get_start(cipher)
     fst, snd = cipher[i:i+2]
-    seq.append(fst//gcd(fst, snd))
-    for x in cipher[i:]: seq.append(x//seq[-1])
-    for x in reversed(cipher[:i]): seq.appendleft(x//seq[0])
+    seq = deque([ fst // gcd(fst, snd) ])
+
+    for x in cipher[i:]          : seq.append(     x // seq[-1] )
+    for x in reversed(cipher[:i]): seq.appendleft( x // seq[ 0] )
 
     primes = set(seq)
     assert len(primes) == 26
@@ -29,6 +28,6 @@ def solve(cipher):
 
 for case in range(1, int(input())+1):
     input()
-    cipher = [int(x) for x in input().split()]
+    cipher = [*map(int, input().split())]
     result = solve(cipher)
     print('Case #{}:'.format(case), result)

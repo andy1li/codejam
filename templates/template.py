@@ -1,4 +1,4 @@
-# 201X Round X  - X. FOOBAR
+# 202X Round X  - X. FOOBAR
 # https://
 
 def solve(n) -> int:
@@ -6,8 +6,7 @@ def solve(n) -> int:
 
 #------------------------------------------------------------------------------#
 
-for case in range(1, int(input())+1):
+for i in range(int(input())):
     n = int(input())
     result = solve(n)
-    output = 'Case #%d: %s' %(case, result)
-    print(output)
+    print('Case #{}:'.format(i+1), result)
