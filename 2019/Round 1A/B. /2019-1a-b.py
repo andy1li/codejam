@@ -1,5 +1,5 @@
-# 2019 Round 1A - B. 
-# https://
+# 2019 Round 1A - B. Golf Gophers
+# https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635/0000000000104f1a
 
 def solve(n):
     length = len(n)
