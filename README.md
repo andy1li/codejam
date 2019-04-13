@@ -2,11 +2,29 @@
 
 My progress of attempting previous code jam problems
 
-## 2018 Round 2
+## [2019 Round 1A](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
+
+- [x]  A. Pylons
+- [ ]  B. Golf Gophers
+- [ ]  C. Alien Rhyme 
+
+---
+
+## [2019 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051705)
+
+- [x]  A. Foregone Solution
+- [x]  B. You Can Go Your Own Way
+- [x]  C. Cryptopangrams
+- [x]  D. Dat Bae
+
+---
+
+## [2018 Round 2](https://codejam.withgoogle.com/2018/challenges/0000000000007706/analysis)
 
 - [ ]  A.
 - [ ]  B.
 - [ ]  C.
+- [ ]  D.
 
 ## [2018 Round 1C](https://codejam.withgoogle.com/2018/challenges/0000000000007765/analysis)
 

@@ -14,29 +14,29 @@ def to_str(x): return ''.join(x)
 def make_tests(n):
     tests = [*map(to_binary, range(32))]
     repeats = ceil(n/32)
-    return np.array((tests * repeats)[:n]).T
+    return np.array((tests * repeats)[:n])
 
 def run():
     n, _, _ = map(int, input().split())
     tests = make_tests(n)
+    # print('tests:', tests, file=sys.stderr)
 
     responses = []
-    for row in tests:
-        print(''.join(row), flush=True)
+    for test in tests.T:
+        print(''.join(test), flush=True)
         responses.append(list(input()))
+    responses = np.array(responses).T
+    # print('responses:', responses, file=sys.stderr)
 
-    tests = [*map(to_str, tests.T)]
-    responses = [*map(to_str, np.array(responses).T)]
-
-    ti = ri = 0; ans = []    
+    ti = ri = 0; ans = []
     while ti < n:
-        if ri < len(responses) and tests[ti] == responses[ri]: ri += 1
+        if (ri < len(responses) 
+        and np.array_equal(tests[ti], responses[ri])): ri += 1
         else: ans.append(ti)
-        ti += 1 
+        ti += 1
 
-    print(*ans, flush=True)
-    verdict = input()
-    assert verdict == '1'
+    print(*ans, flush=True) 
+    assert input() == '1'
 
 for case in range(int(input())): run()
     
