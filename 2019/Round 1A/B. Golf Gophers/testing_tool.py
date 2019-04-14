@@ -15,7 +15,9 @@ try:
 except NameError:
   pass
 
-CASES = ([1, 2, 3],
+CASES = ([30, 50, 100],
+         [10**6, 10**6, 10**6],
+         [1, 2, 3],
          [1, 2, 3]) # fill in your own cases
 QS = (365, 7)
 MAX_GOPHERS = (100, 10 ** 6)
@@ -112,7 +114,7 @@ def RunCases(qs, mg, cases):
 
 
 def main():
-  random.seed(2)
+  random.seed(0)
   assert len(sys.argv) == 2
   index = int(sys.argv[1])
   cases = CASES[index]

@@ -25,4 +25,4 @@ def solve(words):
 for i in range(int(input())):
     words = [input() for _ in range(int(input()))]
     result = solve(words)
-    print('Case #{}:'.format(i+1), result)   
+    print('Case #{}:'.format(i+1), result)

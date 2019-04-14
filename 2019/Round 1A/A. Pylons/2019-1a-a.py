@@ -16,9 +16,9 @@ def recurse(candidates, last, expected):
 def solve(r, c):
     grid = set(product(range(1, r+1), range(1, c+1)))
     for y, x in product(range(ceil(r/2)), range(ceil(c/2))):
-        y, x, expected = y+1, x+1, r*c
-        moves = recurse(grid, (y, x), expected-1)
-        if len(moves) == expected-1: return [(y, x)] + moves
+        move, expected = (y+1, x+1), r*c
+        moves = recurse(grid, move, expected-1)
+        if len(moves) == expected-1: return [move] + moves
 
 #------------------------------------------------------------------------------#
 

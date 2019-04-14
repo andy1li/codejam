@@ -5,8 +5,8 @@ My progress of attempting previous code jam problems
 ## [2019 Round 1A](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
 
 - [x]  A. Pylons
-- [ ]  B. Golf Gophers
-- [ ]  C. Alien Rhyme 
+- [x]  B. Golf Gophers
+- [x]  C. Alien Rhyme 
 
 ---
 
