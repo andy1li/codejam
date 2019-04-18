@@ -12,7 +12,7 @@ def run(n, m):
         print(*[mod]*18, flush=True)
         rs[mod] = sum(map(int, input().split())) % mod
 
-    for i in chain(range(1, 19), range(12+rs[12], m+1, 12)):
+    for i in chain(range(1, 19), range(18+rs[18], m+1, 18)):
         ss = [i % mod for mod in range(12, 19)]
         if all(s == r for s, r in zip(ss, rs[12:])):
             print(i, flush=True)
