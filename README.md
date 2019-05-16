@@ -2,6 +2,22 @@
 
 My progress of attempting previous code jam problems
 
+## [2019 Round 1C](https://codingcompetitions.withgoogle.com/codejam/round/00000000000516b9)
+
+- [x] A. Robot Programming Strategy
+- [x] B. Power Arrangers
+- [ ] C. Bacterial Tactics
+
+---
+
+## [2019 Round 1B](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051706)
+
+- [x] A. Manhattan Crepe Cart
+- [ ] B. Draupnir
+- [ ] C. Fair Fight
+
+---
+
 ## [2019 Round 1A](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
 
 - [x]  A. Pylons
