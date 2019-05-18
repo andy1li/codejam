@@ -2,6 +2,15 @@
 
 My progress of attempting previous code jam problems
 
+---
+
+## [2019 Round 2](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051679)
+
+- [ ] A.
+- [x] B. Pottery Lottery
+- [ ] C.
+- [ ] D.
+
 ## [2019 Round 1C](https://codingcompetitions.withgoogle.com/codejam/round/00000000000516b9)
 
 - [x] A. Robot Programming Strategy

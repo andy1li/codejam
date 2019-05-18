@@ -1,7 +1,8 @@
 # 2019 Round 1B - A. Manhattan Crepe Cart
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000051706/000000000012295c
 
-from itertools import accumulate
+
+from itertools   import accumulate, chain
 from collections import defaultdict, Counter, namedtuple
 Int   = lambda: int(input())
 Ints  = lambda: [*map(int, input().split())]
@@ -15,7 +16,7 @@ def parse_person():
     x, y, d = input().split()
     return Person(int(x), int(y), d)
 
-def d2v(x, y, d):
+def step(x, y, d):
     if d == 'W': return x-1
     if d == 'E': return x+1
     if d == 'S': return y-1
@@ -23,11 +24,11 @@ def d2v(x, y, d):
 
 def solve(p, q, people):
     cnt = defaultdict(Counter)    
-    for x, y, d in people:        
-        cnt[d][d2v(x, y, d)] += 1
+    for person in people:        
+        cnt[person.d][step(*person)] += 1
 
-    xs = sorted(set(cnt['W'].keys()) | set(cnt['E'].keys())) #+ [10**6+1]
-    ys = sorted(set(cnt['S'].keys()) | set(cnt['N'].keys())) #+ [10**6+1]
+    xs = sorted(set(chain( cnt['W'], cnt['E'] )))
+    ys = sorted(set(chain( cnt['S'], cnt['N'] )))
 
     es = [*accumulate(cnt['E'][x] for x in xs)]
     ws = [*accumulate(cnt['W'][x] for x in reversed(xs))][::-1]
@@ -46,6 +47,9 @@ def solve(p, q, people):
         if n + s > max_y:
             ans_y, max_y = y, n+s
 
+    # print('\n', people)
+    # print(xs, es, ws)
+    # print(ys, ns, ss)
     return ans_x, ans_y
 
 #------------------------------------------------------------------------------#

@@ -1,7 +1,7 @@
 # Round 1B 2018 - C. Transmutation
 # https://codejam.withgoogle.com/2018/challenges/0000000000007764/dashboard/000000000003675c 
 
-# Solution adapted from https://codejam.withgoogle.com/2018/challenges/0000000000007764/attempts/for/Flydutchman
+# Solution adapted from https://codingcompetitions.withgoogle.com/codejam/submissions/0000000000007764/Rmx5ZHV0Y2htYW4
 
 from copy import deepcopy
 
