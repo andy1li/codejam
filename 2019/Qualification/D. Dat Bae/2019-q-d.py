@@ -39,4 +39,3 @@ def run():
     assert input() == '1'
 
 for case in range(int(input())): run()
-    
