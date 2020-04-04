@@ -11,10 +11,10 @@ Lines = lambda line, n_lines: [line() for _ in range(n_lines)]
 
 def solve(N):
     matrix = np.array(Lines(Ints, N))
-    K = np.diag(matrix).sum()
-    R = sum( len(set(row)) != N for row in matrix )
-    C = sum( len(set(col)) != N for col in matrix.T )
-    return K, R, C
+    k = np.trace(matrix)
+    r = sum( len(set(row)) != N for row in matrix )
+    c = sum( len(set(col)) != N for col in matrix.T )
+    return k, r, c
 
 #------------------------------------------------------------------------------#
 

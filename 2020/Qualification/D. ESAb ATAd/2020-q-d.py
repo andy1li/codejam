@@ -24,7 +24,7 @@ class QuantumArray():
         for _ in range(n):
             i = self.unkowns.pop()
             self.bits[i] = self.read_bit(i+1)
-            self.unkowns = self.unkowns[::-1]
+            self.unkowns.reverse()
         self.update_states()
 
     def read_bit(self, i):
@@ -32,13 +32,13 @@ class QuantumArray():
         return input()
 
     def update_states(self):
-        self.bits_c  = complement(self.bits)
-        self.bits_cr = self.bits_c[::-1]
-        self.bits_r  = complement(self.bits_cr)
-        self.states = [self.bits, self.bits_c, self.bits_cr, self.bits_r]
+        bits_c  = complement(self.bits)
+        bits_cr = bits_c[::-1]
+        bits_r  = complement(bits_cr)
+        self.states = [self.bits, bits_c, bits_cr, bits_r]
 
     def get_test_idx(self):
-        candidates = list(set(range(B)) - set(self.unkowns))
+        candidates = set(range(B)) - set(self.unkowns)
         max_states = len(set(map(tuple, self.states)))
         for idx in combinations(candidates, 2):
             num_states = len(set(
@@ -47,7 +47,7 @@ class QuantumArray():
             ))
             if num_states == max_states: return idx
 
-    def collapse(self):        
+    def collapse_states(self):        
         test_idx = self.get_test_idx()
         test = [self.read_bit(i+1) for i in test_idx]
 
@@ -64,7 +64,7 @@ class QuantumArray():
 
     def run(self):
         while True:
-            self.collapse()
+            self.collapse_states()
             try: self.read(8)
             except IndexError: break
     
