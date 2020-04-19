@@ -4,6 +4,24 @@ My progress of attempting previous code jam problems
 
 ---
 
+## [2020 Round 1B](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef2)
+
+- [x] A. Expogo
+
+- [x] B. Blindfolded Bullseye
+
+- [ ] C. 
+
+---
+
+## [2020 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27)
+
+- [x] A. Vestigium
+- [x] B. Nesting Depth
+- [x] C. Parenting Partnering Returns
+- [x] D. ESAb ATAd
+- [ ] E. 
+
 ## [2019 Round 2](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051679)
 
 - [ ] A.
@@ -44,13 +62,6 @@ My progress of attempting previous code jam problems
 
 ---
 
-## [2018 Round 2](https://codejam.withgoogle.com/2018/challenges/0000000000007706/analysis)
-
-- [ ]  A.
-- [ ]  B.
-- [ ]  C.
-- [ ]  D.
-
 ## [2018 Round 1C](https://codejam.withgoogle.com/2018/challenges/0000000000007765/analysis)
 
 - [x]  A. A Whole New Word
@@ -86,16 +97,6 @@ My progress of attempting previous code jam problems
 ---
 
 # [Old Platform](https://code.google.com/codejam/past-contests)
-
-## 2017 Round 1C
-
-## 2017 Round 1B
-
-## [2017 Round 1A](https://code.google.com/codejam/contest/5304486/dashboard#s=a)
-
-- [ ]  A. Alphabet Cake
-- [ ]  B. Ratatouille
-- [ ]  C. Play the Dragon
 
 ## [2017 Qualification Round](https://code.google.com/codejam/contest/3264486/dashboard#s=a)
 

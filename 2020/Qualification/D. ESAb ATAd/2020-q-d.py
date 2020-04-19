@@ -8,8 +8,8 @@ import numpy as np
 import sys
 
 def complement(bits): return [
-    '_' if b is '_' else 
-    '1' if b=='0' else '0' 
+    '_' if b == '_' else 
+    '1' if b == '0' else '0' 
     for b in bits
 ]
 
