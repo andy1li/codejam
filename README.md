@@ -12,8 +12,6 @@ My progress of attempting previous code jam problems
 
 - [ ] C. 
 
----
-
 ## [2020 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27)
 
 - [x] A. Vestigium
@@ -21,6 +19,8 @@ My progress of attempting previous code jam problems
 - [x] C. Parenting Partnering Returns
 - [x] D. ESAb ATAd
 - [ ] E. 
+
+---
 
 ## [2019 Round 2](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051679)
 
@@ -35,23 +35,17 @@ My progress of attempting previous code jam problems
 - [x] B. Power Arrangers
 - [ ] C. Bacterial Tactics
 
----
-
 ## [2019 Round 1B](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051706)
 
 - [x] A. Manhattan Crepe Cart
 - [ ] B. Draupnir
 - [ ] C. Fair Fight
 
----
-
 ## [2019 Round 1A](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
 
 - [x]  A. Pylons
 - [x]  B. Golf Gophers
 - [x]  C. Alien Rhyme 
-
----
 
 ## [2019 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051705)
 
