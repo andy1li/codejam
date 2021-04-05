@@ -4,12 +4,20 @@ My progress of attempting previous code jam problems
 
 ---
 
+## [2021 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a)
+
+- [x] A. Reversort
+- [x] B. Moons and Umbrellas
+- [x] C. Reversort Engineering
+- [x] D. Median Sort 
+- [x] E. Cheating Detection
+
+---
+
 ## [2020 Round 1B](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef2)
 
 - [x] A. Expogo
-
 - [x] B. Blindfolded Bullseye
-
 - [ ] C. 
 
 ## [2020 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27)
@@ -90,9 +98,7 @@ My progress of attempting previous code jam problems
 
 ---
 
-# [Old Platform](https://code.google.com/codejam/past-contests)
-
-## [2017 Qualification Round](https://code.google.com/codejam/contest/3264486/dashboard#s=a)
+## [2017 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/00000000002017f7)
 
 - [x]  A. Oversized Pancake Flipper
 - [x]  B. Tidy Numbers
