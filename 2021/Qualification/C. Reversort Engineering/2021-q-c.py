@@ -15,7 +15,7 @@ def solve(n, cost):
 
     while cost and i > -1:
         c = next(j for j in count(1) if check(i-1, j))
-        A = A[:i] + A[i:i+c][::-1] + A[i+c:]
+        A[i:i+c] = reversed(A[i:i+c])
         cost -= c
         i -= 1 
 
