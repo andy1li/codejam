@@ -14,21 +14,17 @@ def solve(n, A, B):
             ans += B[i][j]
             G[n+j][i] = G[i][n+j] = B[i][j]
 
-    mst, maxx = set(), {v : [0, None] for v, edge in G.items()}
-    maxx[0] = (0, None)
-
-    check = lambda item: item[0] not in mst
+    mst, max_ = set(), {v : (0, None) for v, edge in G.items()}
+    unvisited = lambda item: item[0] not in mst
+    by_cost = lambda item: item[1][0]
     for _ in range(len(G)):
-        v, (cost, u) = max(
-            filter(check, maxx.items()), 
-            key=lambda item: item[1][0])
- 
+        v, (cost, u) = max(filter(unvisited, max_.items()), key=by_cost)
         mst.add(v)
         if u is not None: ans -= cost
         
         for u, cost in G[v].items():
-            if cost > maxx[u][0]:
-                maxx[u] = cost, v
+            if cost > max_[u][0]:
+                max_[u] = cost, v
 
     return ans
 
@@ -38,6 +34,6 @@ for i in range(int(input())):
     n = int(input())
     A = [Ints() for _ in range(n)]
     B = [Ints() for _ in range(n)]
-    _, _ = Ints(), Ints()
+    _, _ = input(), input()
     result = solve(n, A, B)
     print('Case #{}:'.format(i+1), result)
