@@ -6,54 +6,51 @@ using namespace std;
 
 #define rep(i, j, k) for (int i=j; i<=k; i++)
 #define For(stop) rep(i, 0, stop-1)
+#define len(c) c.size()
+#define each(x, c) for (auto& x: c)
+#define in(x, c) c.find(x) != end(c)
+#define del(c, x) c.erase( c.find(x) )
+#define last(c) --c.end()
 #define pb push_back
 using ll = long long;
 using vi = vector<int>;
 
 /*----------------------------------------------------------------------------*/ 
  
-array<vi, 300001> ops, eds;
- 
+array<vi, 300001> ss, es;
+
 ll solve() {
     int D, N, K; cin >> D >> N >> K;
 
-    vi H(N); 
     For(N) {
-        int S, E; 
-        cin >> H[i] >> S >> E;
-        ops[--S].pb(i); eds[E].pb(i);
+        int h, s, e; cin >> h >> s >> e;
+        ss[--s].pb(h); es[e].pb(h);
     }
 
     ll ans(0), curr(0);
     multiset<int> actives, subs;
     For(D+1) {
-        for (int d: ops[i]) {
-            actives.insert(H[d]);
-            curr += H[d];
-            if (actives.size() > K) {
-                auto it = begin(actives);
-                curr -= *it;
-                subs.insert(*it);
-                actives.erase(it);
+        each(h, ss[i]) {
+            actives.insert(h); curr += h;
+            if (len(actives) > K) {
+                auto it = begin(actives); actives.erase(it);
+                subs.insert(*it); curr -= *it;
             }
         }
-        ops[i].clear();
+        ss[i].clear();
 
-        for (int d: eds[i]) {
-            if (subs.find(H[d]) != end(subs)) {
-                subs.erase( subs.find(H[d]) );
+        each(h, es[i]) {
+            if (in(h, subs)) {
+                del(subs, h);
             } else {
-                actives.erase( actives.find(H[d]) );
-                curr -= H[d];
-                if (subs.size()) {
-                    auto it = --subs.end();
-                    curr += *it;
-                    actives.insert(*it);
-                    subs.erase(it);
+                del(actives, h); curr -= h;
+                if (len(subs)) {
+                    auto it = last(subs); subs.erase(it);
+                    actives.insert(*it); curr += *it;       
                 }
             }
         }
-        eds[i].clear();
+        es[i].clear();
 
         ans = max(ans, curr);
     }

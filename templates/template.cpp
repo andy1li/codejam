@@ -7,6 +7,12 @@ using namespace std;
 #define rep(i, j, k) for (int i=j; i<=k; i++)
 #define per(i, j, k) for (int i=j; i>=k; i--)
 #define For(stop) rep(i, 0, stop-1)
+#define all(c) begin(c), end(c)
+#define len(c) c.size()
+#define each(x, c) for (auto& x: c)
+#define in(x, c) c.find(x) != end(c)
+#define del(c, x) c.erase( c.find(x) )
+#define last(c) --c.end()
 #define inf LLONG_MAX
 #define pb push_back
 using ll = long long;
