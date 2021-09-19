@@ -1,4 +1,4 @@
-# 202X Round X  - X. FOOBAR
+# 202X Round X - X. FOOBAR
 # https://
 
 from collections import deque, defaultdict as ddict

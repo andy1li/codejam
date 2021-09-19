@@ -37,7 +37,7 @@ def solve_small(d, n, k, attractions):
         nonlocal curr
         if a in subs: 
             subs.remove(a)
-        if a in actives: 
+        else: 
             actives.remove(a)
             curr -= a.happy
             if subs: 

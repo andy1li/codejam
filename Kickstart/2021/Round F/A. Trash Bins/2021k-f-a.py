@@ -1,29 +1,23 @@
 # 2021 Kickstart Round F - A. Trash Bins
 # https://codingcompetitions.withgoogle.com/kickstart/round/0000000000435bae/0000000000887c32
 
-from itertools import groupby
-
 #------------------------------------------------------------------------------#
 
-def gauss(n): return (1 + n) * n // 2
+def solve(N, S):
+    l = [float('inf')] * (N+1)
+    r = l.copy()
+    
+    for i in range(N):
+        l[i+1] = 0 if S[i] else l[i] + 1 
+    for i in reversed(range(N)):
+        r[i] = 0 if S[i] else r[i+1] + 1 
 
-def solve(N, S, ans=0):
-    groups = [ (k, len(list(g))) for k, g in groupby(S) ]
-    for i in [0, -1]:
-        if groups:
-            key, length = groups.pop(i)
-            if key == '0': ans += gauss(length)
-
-    for key, length in groups:
-        if key == '0':
-            half = length // 2
-            if length & 1: ans += gauss(half) + gauss(half+1)
-            else:          ans += gauss(half) * 2 
-
-    return ans
+    return sum(map(min, zip(l[1:], r)))
 
 #------------------------------------------------------------------------------#
 
 for i in range(int(input())):
-    result = solve(int(input()), input())
+    N = int(input())
+    S = [*map(int, input())]
+    result = solve(N, S)
     print('Case #{}:'.format(i+1), result)
