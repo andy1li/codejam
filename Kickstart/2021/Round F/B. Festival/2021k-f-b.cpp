@@ -4,13 +4,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define rep(i, j, k) for (int i=j; i<=k; i++)
+#define rep(i, j, k) for (size_t i=j; i<=k; i++)
 #define For(stop) rep(i, 0, stop-1)
 #define len(c) c.size()
 #define each(x, c) for (auto& x: c)
 #define in(x, c) c.find(x) != end(c)
 #define del(c, x) c.erase( c.find(x) )
 #define last(c) --c.end()
+#define print(x) cout << x << endl;
+#define prints(c) each(x, c) cout << x << ' '; cout << endl
 #define pb push_back
 using ll = long long;
 using vi = vector<int>;
@@ -33,8 +35,8 @@ ll solve() {
         each(h, ss[i]) {
             actives.insert(h); curr += h;
             if (len(actives) > K) {
-                auto it = begin(actives); actives.erase(it);
-                subs.insert(*it); curr -= *it;
+                auto it = begin(actives); subs.insert(*it);
+                actives.erase(it); curr -= *it;
             }
         }
         ss[i].clear();
@@ -45,8 +47,8 @@ ll solve() {
             } else {
                 del(actives, h); curr -= h;
                 if (len(subs)) {
-                    auto it = last(subs); subs.erase(it);
-                    actives.insert(*it); curr += *it;       
+                    auto it = last(subs); actives.insert(*it);
+                    subs.erase(it); curr += *it;
                 }
             }
         }
@@ -63,6 +65,6 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int T; cin >> T;
-    For(T) cout << "Case #" << i+1 << ": " << solve() << endl;
+    int T; cin >> T; For(T) 
+        cout << "Case #" << i+1 << ": " << solve() << endl;
 }

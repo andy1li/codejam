@@ -4,6 +4,16 @@ My progress of attempting previous code jam problems
 
 ---
 
+## [2022 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/0000000000876ff1)
+
+- [x] A. Punched Cards
+- [x] B. 3D Printing
+- [x] C. d1000000
+- [ ] D. 
+- [ ] E. 
+
+---
+
 ## [2021 Qualification Round](https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a)
 
 - [x] A. Reversort
