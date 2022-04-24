@@ -17,7 +17,7 @@ for case in range(1, n_cases+1):
     result = solve(words)
 
     result_output = 'Case #%s: %s\n' %(case, result)
-    print result_output
+    print(result_output)
     output.write(result_output)
 
 input.close()

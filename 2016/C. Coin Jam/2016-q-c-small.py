@@ -9,7 +9,7 @@ def pad_num(s, width):
         return '0'*diff + s
 
 def make_coins(n):
-    for i in xrange(2**(n-2)):
+    for i in range(2**(n-2)):
         inner = '{0:b}'.format(i)
         yield '1%s1' % (pad_num(inner, n-2))
 
@@ -71,8 +71,8 @@ for case in range(1, n_cases+1):
     for r in results:
         result_output += r + '\n'
 
-    print result_output
-    print len(results)
+    print(result_output)
+    print(len(results))
     output.write(result_output)
 
 input.close()

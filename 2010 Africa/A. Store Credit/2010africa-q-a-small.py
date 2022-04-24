@@ -25,7 +25,7 @@ for case in range(1, n_cases+1):
     a, b = solve(credit, items)
 
     result_output = 'Case #%s: %s %s\n' %(case, a, b)
-    print result_output
+    print(result_output)
     output.write(result_output)
 
 input.close()

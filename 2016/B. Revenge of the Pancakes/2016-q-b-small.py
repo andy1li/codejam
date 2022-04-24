@@ -2,7 +2,7 @@
 # https://code.google.com/codejam/contest/6254486/dashboard#s=p1
 
 def solve_plus(s):
-    print "solve_plus", s
+    print("solve_plus", s)
     s = s.rstrip('+')
     if s is '':
         return 0
@@ -10,7 +10,7 @@ def solve_plus(s):
         return solve_minus(s) + 1
 
 def solve_minus(s):
-    print "solve_minus", s
+    print("solve_minus", s)
     s = s.rstrip('-')
     if s is '':
         return 0
@@ -28,7 +28,7 @@ for case in range(1, n_cases+1):
     result = solve_plus(s)
 
     result_output = 'Case #%s: %s\n' %(case, result)
-    print result_output
+    print(result_output)
     output.write(result_output)
 
 input.close()

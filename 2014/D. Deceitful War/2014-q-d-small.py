@@ -58,7 +58,7 @@ for case in range(1, n_cases+1):
     deceitful_war, war = solve(n_blocks, naomi, ken)
 
     result_output = 'Case #%s: %s %s\n' %(case, deceitful_war, war)
-    print result_output
+    print(result_output)
     output.write(result_output)
 
 input.close()

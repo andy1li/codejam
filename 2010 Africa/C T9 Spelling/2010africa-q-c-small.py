@@ -60,7 +60,7 @@ for case in range(1, n_cases+1):
     result = solve(letters, l2d_map)
 
     result_output = 'Case #%s: %s\n' %(case, result)
-    print result_output
+    print(result_output)
     output.write(result_output)
 
 input.close()
