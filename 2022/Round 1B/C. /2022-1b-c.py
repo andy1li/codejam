@@ -1,4 +1,4 @@
-# 2022 Round 1A - C. ASeDatAb
+# 2022 Round 1B - C. ASeDatAb
 # https://codingcompetitions.withgoogle.com/codejam/round/000000000087711b/0000000000acd29b
 
 # python interactive_runner.py python testing_tool.py 0 -- python 2022-1b-c.py

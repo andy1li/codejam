@@ -1,4 +1,4 @@
-# 2022 Round 1A - A. Pancake Deque 
+# 2022 Round 1B - A. Pancake Deque 
 # https://codingcompetitions.withgoogle.com/codejam/round/000000000087711b/0000000000acd59d
 
 import sys; sys.stdin = open('A. Pancake Deque/sample.in', 'r')

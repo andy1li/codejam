@@ -1,4 +1,4 @@
-# 2022 Round 1A - B. Controlled Inflation
+# 2022 Round 1B - B. Controlled Inflation
 # https://codingcompetitions.withgoogle.com/codejam/round/000000000087711b/0000000000accfdb
 
 import sys; sys.stdin = open('B. Controlled Inflation/sample.in', 'r')
