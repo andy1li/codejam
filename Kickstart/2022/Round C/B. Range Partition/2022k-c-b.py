@@ -1,7 +1,7 @@
 # 2022 Kickstart Round C - B. Range Partition
 # https://codingcompetitions.withgoogle.com/kickstart/round/00000000008cb4d1/0000000000b20deb
 
-import sys; sys.stdin = open('B. Range Partition/ts2_input.txt', 'r')
+import sys; sys.stdin = open('B. Range Partition/sample.in', 'r')
 sys.setrecursionlimit(10**9)
 
 Int = lambda: int(input())
