@@ -2,7 +2,6 @@
 # https://codingcompetitions.withgoogle.com/kickstart/round/00000000008cb4d1/0000000000b20deb
 
 import sys; sys.stdin = open('B. Range Partition/sample.in', 'r')
-sys.setrecursionlimit(10**9)
 
 Int = lambda: int(input())
 Ints = lambda: [*map(int, input().split())]
@@ -10,11 +9,12 @@ Ints = lambda: [*map(int, input().split())]
 #------------------------------------------------------------------------------#
 
 def partition(n, p_sum):
-    if (p_sum == 0 or n == 0): return []
-    return (
-        partition(p_sum, p_sum) if n > p_sum else 
-        [n] + partition(n-1, p_sum-n)
-    )
+    p = []
+    while n > 0 and p_sum > 0:
+        if n > p_sum: n = p_sum
+        p.append(n)
+        n, p_sum = n-1, p_sum-n
+    return p
 
 def solve(n, x, y):
     sum_n = n * (n + 1) // 2
@@ -26,7 +26,6 @@ def solve(n, x, y):
     return f'''POSSIBLE
 {len(p_a)}
 {' '.join(map(str, p_a))}'''
-
 
 #------------------------------------------------------------------------------#
 
